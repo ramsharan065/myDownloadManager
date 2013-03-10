@@ -20,10 +20,7 @@ public class Downloader {
     protected URL url;
     protected int size;
     protected int downloaded;
-<<<<<<< OURS
-=======
-    
->>>>>>> THEIRS
+
     
     public Downloader(URL url){
         this.url = url;
@@ -32,17 +29,14 @@ public class Downloader {
         
         download();
     }
-<<<<<<< OURS
-=======
 
->>>>>>> THEIRS
     
     private void download() {
         try {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Range", "bytes="+downloaded+"-");
             connection.connect();
-<<<<<<< OURS
+
             int response = connection.getResponseCode();
             System.out.println("type : " + connection.getContentType());
             System.out.println(""+response);
@@ -62,42 +56,27 @@ public class Downloader {
             System.out.println("file name : "+ filename );
             //filename = "abbbbbbba.flv";
             RandomAccessFile file = new RandomAccessFile(filename, "rw");
-=======
-            System.out.println(""+connection.getResponseCode());
-            System.out.println(""+connection.getContentLength()+"B");
-            RandomAccessFile file = new RandomAccessFile("abcabc.pdf", "rw");
->>>>>>> THEIRS
+
             file.seek(downloaded);
             InputStream stream = connection.getInputStream();
             byte b[] = new byte[1024*120];
             while(true){
-<<<<<<< OURS
-=======
-                byte b[] = new byte[1024];
->>>>>>> THEIRS
+
                 int read = stream.read(b);
                 if (read ==-1) break;
                 downloaded+=read;
-<<<<<<< OURS
+
                 //System.out.println("downloaded = "+downloaded/(1024.0) +"KB");
                 //System.out.println("remaining = "+(size - downloaded)/(1024.0) + "KB");
-=======
-                System.out.println(""+downloaded);
->>>>>>> THEIRS
+
                 file.write(b, 0, read);
-<<<<<<< OURS
+
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, null, ex);
                 }
-=======
-//                try {
-//                    Thread.sleep(10);
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, null, ex);
-//                }
->>>>>>> THEIRS
+
             }
             System.out.println("file downloaded");
             connection.disconnect();

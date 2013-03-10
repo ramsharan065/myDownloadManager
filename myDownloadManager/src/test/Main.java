@@ -17,15 +17,12 @@ import java.util.Timer;
  */
 public class Main {
     public static void main(String string[]) throws MalformedURLException{
-<<<<<<< OURS
+
         //URL url = new URL("http://localhost/test/LFS-BOOK-7.2.pdf");
         //URL url = new URL("http://d19vezwu8eufl6.cloudfront.net/images/recoded_videos%2F06_05%20-%20Video%20Level%20Sets%20and%20Curve%20Evolution%20%5Bf3f5e6e2%5D%20.mp4");
         //URL url = new URL("http://photography.nationalgeographic.com/staticfiles/NGS/Shared/StaticFiles/Photography/Images/Content/mountain-hut-584962-sw.jpg");
         //Downloader d = new Downloader(url);
-=======
-        URL url = new URL("http://localhost/test/LFS-BOOK-7.2.pdf");
-        Downloader d = new Downloader(url);
->>>>>>> THEIRS
+
         
         if(string.length!=0){
             URL url = new URL(string[0]);
